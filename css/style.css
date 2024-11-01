@@ -1,16 +1,16 @@
 /********** Template CSS **********/
 :root {
-    --primary: #8ecae6;     /* Main primary color */
-    --secondary: #219ebc;   /* Soft blue for secondary elements */
+    --primary: #741B39;     /* Main primary color */
+    --secondary: #fb8500;   /* Soft blue for secondary elements */
     --light: #f8f2f0;       /* Light background or text elements */
-    --dark: #023047;        /* Dark blue for strong contrasts */
+    --dark: #051622;        /* Dark blue for strong contrasts */
     --warning: #ffb703;     /* Accent for warnings or highlights */
     --danger: #fb8500;      /* Orange for danger or emphasis */
 
-    --bs-primary: #8ecae6;   /* Main primary color */
-    --bs-secondary: #219ebc; /* Soft blue for secondary elements */
+    --bs-primary: #741B39;   /* Main primary color */
+    --bs-secondary: #fb8500; /* Soft blue for secondary elements */
     --bs-light: #f8f2f0;     /* Light background or text elements */
-    --bs-dark: #023047;      /* Dark blue for strong contrasts */
+    --bs-dark: #051622;      /* Dark blue for strong contrasts */
     --bs-warning: #ffb703;   /* Accent for warnings or highlights */
     --bs-danger: #fb8500;    /* Orange for danger or emphasis */
 }
@@ -78,6 +78,15 @@
     z-index: 99;
 }
 
+.logo-text {
+    font-family: 'Lora', serif;   /* Use a custom font */
+    font-weight: bold;                /* Make the text bold */
+    color: #f0e68c;                   /* A light color for contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Soft shadow effect */
+    letter-spacing: 1px;              /* Space letters slightly */
+    margin-left: 10px;                /* Add space between image and text */
+    font-size: 1.8rem;                /* Adjust font size */
+}
 
 /*** Spinner ***/
 #spinner {
@@ -156,8 +165,12 @@
 }
 
 .btn-primary:hover, .btn-primary:focus {
-    background-color: #1b7f9f; /* Slightly darker than #219ebc */
-    border-color: #1b7f9f;
+    background-color: #ce2960; /* Slightly lighter*/
+    border-color: #ce2960;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #c46800; /* Slightly darker*/
+    border-color: #c46800;
 }
 
 
