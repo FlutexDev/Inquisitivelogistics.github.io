@@ -197,6 +197,7 @@
     </div>
     <!-- Footer End -->
 
+    <div id="snackbar"></div>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top text-white"><i class="bi bi-arrow-up"></i></a>
@@ -211,58 +212,63 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-         <!-- EmailJs Service Functions -->
-         <script>
-            function showSnackbar(message, type) {
-                const snackbar = document.getElementById("snackbar");
-                snackbar.textContent = message;
     
-                // Change background color based on message type
-                snackbar.className = type === 'success' ? '' : 'error';
-                snackbar.style.visibility = 'visible';
-    
-                // Fade out after 3 seconds
+    <!-- EmailJs Service Functions -->
+    <script>
+        function showSnackbar(message, type) {
+            const snackbar = document.getElementById("snackbar");
+            snackbar.textContent = message;
+
+            // Change background color based on message type
+            snackbar.className = type === 'success' ? 'show' : 'error show';
+            snackbar.style.visibility = 'visible';
+            snackbar.style.opacity = '1'; // Set opacity for fade-in effect
+
+            // Fade out after 3 seconds
+            setTimeout(() => {
+                snackbar.style.opacity = '0'; // Set opacity for fade-out effect
                 setTimeout(() => {
-                    snackbar.style.visibility = 'hidden';
-                }, 3000);
-            }
-    
+                    snackbar.style.visibility = 'hidden'; // Hide after fading out
+                }, 500); // Delay to match the fade out transition
+            }, 3000);
+        }
             function sendEmail(event) {
-                event.preventDefault(); // Prevent form from submitting normally
-        
-                // Disable the submit button to prevent multiple submissions
-                const submitButton = document.getElementById("submit-button");
-                submitButton.disabled = true;
-                submitButton.innerText = "Sending..."; // Change button text
-        
-                const emailData = {
-                    name: document.getElementById("name").value,
-                    company_name: document.getElementById("company_name").value,
-                    mc_number: document.getElementById("mc_number").value,
-                    email: document.getElementById("email").value,
-                    phone: document.getElementById("phone").value,
-                    power_units: document.getElementById("power_units").value,
-                    truck_type: document.getElementById("truck_type").value
-                };
-        
-                console.log("Sending email with data:", emailData); // Log the email data
-        
-                emailjs.send("service_7sz6itr", "template_3wwa9rc", emailData)
-                .then(() => {
-                        showSnackbar("Quote request sent successfully!", 'success'); // Show success message
-                        document.getElementById("quote-form").reset(); // Reset form after submission
-                    })
-                    .catch((error) => {
-                        showSnackbar("Failed to send the quote request. Please try again.", 'error'); // Show error message
-                        console.error("EmailJS error:", error);
-                    })
-                    .finally(() => {
-                        // Re-enable the submit button
-                        submitButton.disabled = false;
-                        submitButton.innerText = "Submit"; // Reset button text
-                    });
-            }
-        </script>    
+            event.preventDefault(); // Prevent form from submitting normally
+    
+            // Disable the submit button to prevent multiple submissions
+            const submitButton = document.getElementById("submit-button");
+            submitButton.disabled = true;
+            submitButton.innerText = "Sending..."; // Change button text
+    
+            const emailData = {
+                name: document.getElementById("name").value,
+                company_name: document.getElementById("company_name").value,
+                mc_number: document.getElementById("mc_number").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                power_units: document.getElementById("power_units").value,
+                truck_type: document.getElementById("truck_type").value
+            };
+    
+            console.log("Sending email with data:", emailData); // Log the email data
+    
+            emailjs.send("service_7sz6itr", "template_3wwa9rc", emailData)
+            .then(() => {
+                    showSnackbar("Quote request sent successfully!", 'success'); // Show success message
+                    document.getElementById("quote-form").reset(); // Reset form after submission
+                })
+                .catch((error) => {
+                    showSnackbar("Failed to send the quote request. Please try again.", 'error'); // Show error message
+                    console.error("EmailJS error:", error);
+                })
+                .finally(() => {
+                    // Re-enable the submit button
+                    submitButton.disabled = false;
+                    submitButton.innerText = "Submit"; // Reset button text
+                });
+        }
+    </script>
+    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
