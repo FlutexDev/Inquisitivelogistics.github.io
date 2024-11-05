@@ -1,4 +1,9 @@
 /********** Template CSS **********/
+/* Prevent overflow issues */
+body {
+    overflow-x: hidden;
+}
+
 :root {
     --primary: #741B39;     /* Main primary color */
     --secondary: #fb8500;   /* Soft blue for secondary elements */
@@ -78,14 +83,7 @@
     z-index: 99;
 }
 
-.logo-text {
-    font-family: 'Lora', serif;   /* Use a custom font */
-    font-weight: bold;                /* Make the text bold */
-    color: #f0e68c;                   /* A light color for contrast */
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Soft shadow effect */
-    letter-spacing: 1px;              /* Space letters slightly */
-    font-size: 1.8rem;                /* Adjust font size */
-}
+
 
 /*** Spinner ***/
 #spinner {
@@ -259,6 +257,7 @@
         opacity: 0;
     }
 }
+
 /*** Navbar ***/
 .navbar {
     background-color: var(--primary); /* Set primary color for navbar */
@@ -281,6 +280,7 @@
 .navbar .navbar-toggler-icon {
     color: var(--primary); /* Toggler icon color */
 }
+
 
 .navbar .navbar-nav .nav-link {
     color: #FFFFFF; /* Link color in navbar */
@@ -310,42 +310,188 @@
     margin-right: 20px;
 }
 
-h4 {
-    color: #FFFFFF; /* Set contact info color to white */
-    margin: 0;
+.logo-text {
+    font-family: 'Lora', serif;   /* Use a custom font */
+    font-weight: bold;                /* Make the text bold */
+    color: #f0e68c;                   /* A light color for contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Soft shadow effect */
+    letter-spacing: 1px;              /* Space letters slightly */
+    font-size: 1.8rem;                /* Adjust font size */
+}
+
+.logo-img {
+    height: 120px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+    
+    .navbar .navbar-nav .nav-item {
+        margin-right: 10px;
+    }
+
+    .logo-text {
+        letter-spacing: 1px;              /* Space letters slightly */
+        font-size: 1.6rem;                /* Adjust font size */
+    }
+    .logo-img {
+        height: 110px;
+        margin-bottom: -15px;
+        margin-top: -15px;
+    }
+}
+@media (min-width: 1075px) and (max-width: 1200px) {
+    
+    .navbar .navbar-nav .nav-item {
+        margin-right: 4px;
+    }
+
+    .logo-text {
+        letter-spacing: 1px;              /* Space letters slightly */
+        font-size: 1.5rem;                /* Adjust font size */
+    }
+    .logo-img {
+        height: 100px;
+        margin-bottom: -15px;
+        margin-top: -15px;
+    }
+
+    .number-text {
+        font-size: 16px;
+
+    }
+    
+    .call-icon {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 110px) and (max-width: 1074.98px) {
+    
+    .navbar .navbar-nav .nav-item {
+        margin-right: 0px;
+    }
+
+    .logo-text {
+        letter-spacing: 1px;              /* Space letters slightly */
+        font-size: 1.3rem;                /* Adjust font size */
+    }
+    .logo-img {
+        height: 90px;
+        margin-bottom: -15px;
+        margin-top: -15px;
+    }
+
+    .number-text {
+        font-size: 14px;
+
+    }
+    
+    .call-icon {
+        font-size: 14px;
+    }
 }
 
 /* Tablet-specific styles */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .navbar .navbar-brand img {
-        height: 80px; /* Adjust logo size on tablets */
-    }
+@media (min-width: 768px) and (max-width: 109.98px) {
+    
 
     .navbar .navbar-nav .nav-link {
         font-size: 14px;
-        padding: 10px 15px; /* Adjust padding for tablet view */
     }
 
-    h4 {
-        display: none; /* Hide contact info on tablet for better spacing */
+    .logo-text {
+        letter-spacing: 1px;  
+        font-size: 1.4rem;
+    }
+    .logo-img {
+        height: 100px;
+        margin-bottom: -15px;
+        margin-top: -15px;
     }
 }
 
 /* Mobile styles */
-@media (max-width: 767.98px) {
-    .navbar .navbar-brand img {
-        height: 70px; /* Adjust logo size on mobile */
-    }
+@media (min-width: 576px) and (max-width: 767.98px) {
 
     .navbar .navbar-nav .nav-link {
         text-align: center;
         padding: 12px;
         font-size: 14px;
-        color: #FFFFFF; /* Mobile link color */
+        color: #FFFFFF;
     }
 
-    h4 {
-        display: none; /* Hide contact info on mobile */
+    .logo-text {
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    }
+
+    .logo-img {
+        height: 80px;
+        margin-bottom: -10px;
+        margin-top: -10px;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: contain;
+    }
+
+}
+
+@media (min-width: 360px) and (max-width: 575.98px) {
+
+
+    .navbar .navbar-nav .nav-link {
+        text-align: center;
+        padding: 12px;
+        font-size: 10px;
+        color: #FFFFFF;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: contain;
+    }
+
+    .logo-text {
+        letter-spacing: 1px; 
+        font-size: 1.0rem;
+    }
+
+    .logo-img {
+        height: 60px;
+        margin-bottom: -5px;
+        margin-top: -5px;
+    }
+}
+
+@media (max-width: 359.98px) {
+
+
+    .navbar .navbar-nav .nav-link {
+        text-align: center;
+        padding: 6px;
+        font-size: 10px;
+        color: #FFFFFF;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+        background-size: contain;
+    }
+
+    .logo-text {
+        letter-spacing: 1px;
+        font-size: 1.0rem; 
+    }
+
+    .logo-img {
+       display: none;
     }
 }
 
@@ -660,4 +806,32 @@ h4 {
 
 .footer .copyright a {
     color: var(--light);
+}
+
+/*** Snackbar ***/
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on success/error */
+    min-width: 250px; /* Set a minimum width */
+    margin-left: -125px; /* Center the snackbar */
+    background-color: #333; /* Black background */
+    color: #fff; /* White text */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded corners */
+    padding: 16px; /* Some padding */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 50%; /* Center it horizontally */
+    bottom: 30px; /* 30px from the bottom */
+    transition: visibility 0s, opacity 0.5s linear; /* Fade in and out */
+    opacity: 0; /* Invisible by default */
+}
+
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    background-color: green;
+    opacity: 1; /* Show the snackbar */
+}
+
+.error {
+    background-color: red; /* Error snackbar color */
 }
