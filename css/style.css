@@ -329,10 +329,10 @@ body {
     }
     .logo-text {
         letter-spacing: 1px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .logo-img {
-        height: 100px;
+        height: 90px;
         margin-bottom: -15px;
         margin-top: -15px;
     }
@@ -344,7 +344,7 @@ body {
     }
 }
 
-/* 720p laptop screens and similar resolutions */
+/*laptop screens and similar resolutions */
 @media (min-width: 1024px) and (max-width: 1074px) {
     .navbar .navbar-nav .nav-item {
         margin-right: 2px;
@@ -354,7 +354,29 @@ body {
         font-size: 1.2rem;
     }
     .logo-img {
-        height: 80px;  /* Reduced size specifically for 720p */
+        height: 80px; 
+        margin-bottom: -10px;
+        margin-top: -10px;
+    }
+    .number-text {
+        font-size: 14px;
+    }
+    .call-icon {
+        font-size: 14px;
+    }
+}
+
+/* 720p laptop screens and similar resolutions */
+@media (min-width: 975px) and (max-width: 1023px) {
+    .navbar .navbar-nav .nav-item {
+        margin-right: 2px;
+    }
+    .logo-text {
+        letter-spacing: 0.5px;
+        font-size: 1.2rem;
+    }
+    .logo-img {
+        height: 75px; 
         margin-bottom: -10px;
         margin-top: -10px;
     }
@@ -367,7 +389,7 @@ body {
 }
 
 /* Tablet landscape */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 974px) {
     .navbar .navbar-nav .nav-link {
         font-size: 14px;
     }
@@ -376,7 +398,7 @@ body {
         font-size: 1.4rem;
     }
     .logo-img {
-        height: 90px;
+        height: 80px;
         margin-bottom: -15px;
         margin-top: -15px;
     }
@@ -415,8 +437,8 @@ body {
         color: #FFFFFF;
     }
     .navbar-toggler-icon {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.3rem;
+        height: 1.3rem;
         background-size: contain;
     }
     .logo-text {
@@ -424,7 +446,7 @@ body {
         font-size: 1.0rem;
     }
     .logo-img {
-        height: 60px;
+        height: 50px;
         margin-bottom: -5px;
         margin-top: -5px;
     }
@@ -509,10 +531,10 @@ body {
     border-color: var(--primary);
 }
 
-.page-header {
+/* .page-header {
     background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
-}
+} */
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
